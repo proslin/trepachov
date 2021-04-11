@@ -7,13 +7,13 @@ class Tank {
     }
     fireTo(x,y) {
         //перед выстрелом проверяем снаряды
-        if (this.canFire()) {
+        if (this._canFire()) {
       this.ammunition -=1;
     }
     }
 
     //вспомогательный метод для проверки снарядов:
-    canFire(ammunition) {
+    _canFire(ammunition) {
         if (ammunition>0) {
             return true;
         } else {

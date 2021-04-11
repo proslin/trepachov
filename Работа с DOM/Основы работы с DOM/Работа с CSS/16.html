@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value = "ку-ку" id = "input">
+    <button onclick="go()">Нажми меня</button>
+    <script>
+        function go() {
+            let elem = document.getElementById("input");
+            elem.value = "Я поменял текст и CSS";
+            elem.style.color = "red";
+            elem.style.width = "300px";
+            elem.style.height = "50px";
+            elem.style.borderRadius = "10px";
+        }
+    </script>
+</body>
+</html>
