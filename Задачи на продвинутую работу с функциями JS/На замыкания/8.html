@@ -1,0 +1,16 @@
+<button></button><button></button><button></button><button></button>
+<script>
+    let func = function () {
+       let num = 1;
+       return function() {
+           this.innerHTML = num;
+           return num++;
+       };
+      }
+      
+    let button = document.getElementsByTagName("button");
+    for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", func(this));
+    }
+   
+</script>

@@ -1,0 +1,15 @@
+<script>
+    function counter() {
+        let num = 0;
+        return function() {
+          return num++;
+        };
+    }
+
+    let func = counter();
+
+    console.log(func());
+    console.log(func());
+    console.log(func());
+    console.log(func());
+</script>

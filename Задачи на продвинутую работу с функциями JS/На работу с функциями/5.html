@@ -1,0 +1,27 @@
+<script>
+    let each = function (startArr, f) { 
+       
+       return f(startArr);
+   }
+   let arr = [1, 2, 3, 4, 5];
+   
+  // let func = function(arr) {
+  //    arr.forEach((element, index, newArr) => {
+  //       newArr[index] = Math.pow(element, 2); 
+  //    });
+  //    return arr;
+  // }
+
+  //var func = function(a){
+//	var newArr = [];
+//	for (var i = 0; i < a.length; i++) {
+//		newArr[i]=Math.pow(a[i], 2);
+//	}
+//	return newArr;
+//}
+
+let func = function(arr) {
+    return arr.map(x => Math.pow(x,2));
+} 
+   console.log(each(arr, func));
+</script>

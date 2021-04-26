@@ -1,0 +1,21 @@
+<p>Paragraph 1</p>
+<p>Paragraph 1</p>
+<p>Paragraph 1</p>
+<p>Paragraph 1</p>
+<p>Paragraph 1</p>
+<script>
+    let colors = ["red", "blue", "green", "yellow"]; 
+    let f1 = function() {
+         let k = 0;
+         return function() {
+            this.style.color = colors[k];
+            k++;
+            if (k == colors.length) {k = 0};
+             
+         }
+    }
+    let pArr = document.getElementsByTagName("p");
+    for (let i = 0; i < pArr.length; i++) {
+        pArr[i].addEventListener('click', f1());
+    }
+</script>

@@ -1,0 +1,18 @@
+<script>
+    var each = function(numArr, funcArray) {
+	var newArr = [];
+	for (var i = 0; i < numArr.length; i++){
+		var current = funcArray[i % funcArray.length](numArr[i]);
+		funcArray.length через j++;
+		newArr.push(current);
+  	}
+	return newArr
+}
+
+var f1 = function(a){return a + 3};
+var f2 = function(a){return a + 2};
+var f3 = function(a){return a + 1};
+var funcAll = [f1, f2, f3];
+var startArray = [0,1,2, 3, 4, 5, 6, 7, 8, 9,10, 11];
+document.write(each(startArray, funcAll));
+</script>
