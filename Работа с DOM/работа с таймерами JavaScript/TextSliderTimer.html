@@ -1,0 +1,25 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+       <div id = "elem"></div> 
+       <script>
+           let texts = ['text 1', 'text 2', 'text 3'];
+           let elem = document.querySelector('#elem');
+           let i = 1;
+           elem.innerHTML = texts[0];
+           window.setInterval(function() {
+               elem.innerHTML = texts[i];
+               i++;
+               if (i == texts.length) {
+                   i = 0;
+               }
+           }, 1000);
+       </script>
+    </body>
+    </html>

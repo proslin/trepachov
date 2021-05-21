@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!--независимая функция со слайдером обязательно должна быть верстка такая же как в примере  -->
+  <div id = "slider">
+  <div class = "elem"></div> 
+  <button class = "prev">prev</button>
+  <button class = "next">next</button>
+</div>  
+    <script>
+        initSlider(['text1', 'text2', 'text3'], '#slider');
+        function initSlider(texts, selector) {
+            let parent = document.querySelector(selector);
+       
+        let elem = document.querySelector('.elem');
+        let prev = parent.querySelector('.prev');
+        let next = parent.querySelector('.next');
+        let i = 0;
+        elem.innerHTML = texts[i];
+        next.addEventListener('click', function() {
+            i++;
+            if (i == texts.length) {
+                i = 0;
+            }
+            elem.innerHTML = texts[i];
+        });
+        prev.addEventListener('click', function() {
+            i--;
+            if (i == -1) {
+                i = texts.length - 1;
+            }
+            elem.innerHTML = texts[i];
+        });
+    }
+    </script>
+</body>
+</html>

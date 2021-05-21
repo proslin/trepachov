@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "elem">0</p>
+    <button id = "button">start</button>
+    <script>
+        let elem = document.querySelector('#elem');
+        let buttonStart = document.querySelector('#button');        
+        buttonStart.addEventListener('click', start);
+        let id;
+
+        function start() {
+            id = setInterval(function() {
+                elem.innerHTML = Number(elem.innerHTML) + 1;
+            }, 1000);
+            this.removeEventListener('click', start);
+            this.addEventListener('click', stop);
+            this.innerHTML = 'stop';
+        }
+
+        function stop() {
+            clearInterval(id);
+            this.removeEventListener('click', stop);
+            this.addEventListener('click', start);
+            this.innerHTML = 'start';
+        }
+    </script>
+</body>
+</html>
